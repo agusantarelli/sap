@@ -2,10 +2,8 @@ from django.shortcuts import render,get_object_or_404,redirect
 from personas.models import Persona,Domicilio
 from django.forms import modelform_factory
 from personas.forms import PersonaForm,DomicilioForm
-# Create your views here.
 
 def detallePersona(request,id):
-    #personas = Persona.objects.get(pk=id)
     personas = get_object_or_404(Persona,pk=id)
     sin_registrar = 'No registrado'
     try:
@@ -13,9 +11,6 @@ def detallePersona(request,id):
         return render(request,'personas/detalle.html',{'persona': personas,'domicilio': domicilio.id})
     except:
         return render(request,'personas/detalle.html',{'persona': personas,'domicilio': sin_registrar})
-
-#Crear fromulario
-# PersonaForm = modelform_factory(Persona,exclude=[])
 
 def nuevaPersona(request):
     if request.method == 'POST':
@@ -31,7 +26,6 @@ def nuevaPersona(request):
 def editarPersona(request,id):
     persona = get_object_or_404(Persona,pk=id)
     if request.method == 'POST':
-        #instance for update
         formaPersona = PersonaForm(request.POST,instance=persona)
         if formaPersona.is_valid():
             formaPersona.save()
@@ -62,24 +56,10 @@ def nuevoDomicilio(request):
         formaDomicilio = DomicilioForm()
 
     return render(request,'personas/nuevo-domicilio.html',{'formaDomicilio': formaDomicilio})
-'''
-def nuevoDomicilio2(request):
-    if request.method == 'POST':
-        formaDomicilio = DomicilioForm(request.POST)
-        if formaDomicilio.is_valid():
-            formaDomicilio.save()
-            return redirect('nueva')
-    else:
-        formaDomicilio = DomicilioForm()
-
-    return render(request,'personas/nuevo-domicilio.html',{'formaDomicilio': formaDomicilio})
-'''
-
 
 def editarDomicilio(request,id):
     domicilio = get_object_or_404(Domicilio,pk=id)
     if request.method == 'POST':
-        #instance for update
         formaDomicilio = DomicilioForm(request.POST,instance=domicilio)
         if formaDomicilio.is_valid():
             formaDomicilio.save()

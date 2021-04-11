@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+
+<link rel="stylesheet" href="{% static 'style-list-person.css' %}">
+<section>
+    <h1>Listado de Personas</h1>
+    <div class='canti'> Cantidad de personas registradas: {{Numero}}</div>
+    <div class="tbl-header">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <thead>
+                <tr>
+                    <th>Nombre y Apellido</th>
+                    <th>Email</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="tbl-content">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+                {% for persona in personas %}
+                <tr>
+                    <td>{{persona.nombre}} {{persona.apellido}}</td>
+                    <td>{{persona.email}}</td>
+                    <div class='select'>
+                        <td>
+                            <a class='button' href="detalle_persona/{{persona.id}}">Ver detalle</a>
+                        </td>
+                        <td>
+                            <a class='button' href="editar_persona/{{persona.id}}">Editar</a>
+                        </td>
+                        <td>
+                            <a class='button' href="eliminar_persona/{{persona.id}}">Eliminar</a>
+                        </td>
+                    </div>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <a class='list1' href="nueva_persona">Agregar persona</a>
+    </div>
+    <div>
+        <a class="list2" href="http://127.0.0.1:8000/#menu">Volver Atrás</a>
+    </div>
+</section>

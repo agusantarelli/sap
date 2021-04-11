@@ -1,50 +1,50 @@
 {% load static %}
 <!DOCTYPE html>
 
-<link rel="stylesheet" href="{% static 'style-list-person.css' %}">
+<link rel="stylesheet" href="{% static 'style-list.css' %}">
 <section>
-  <h1>Listado de Domicilios</h1>
-  <div class = 'canti'> Cantidad de domicilios registrados: {{numero}}</div>
-  <div class="tbl-header">
-    <table cellpadding="0" cellspacing="0" border="0">
-      <thead>
-        <tr>
-          <th>Id</th>
-          <th>Calle</th>
-          <th>Numero</th>
-          <th>País</th>
-          <th></th>
-		  <th></th>
-        </tr>
-      </thead>
-    </table>
-  </div>
-  <div class="tbl-content">
-    <table cellpadding="0" cellspacing="0" border="0">
-      <tbody>
-		  {% for domicilio in domicilios %}
-        <tr>
-  			<td>{{domicilio.id}}</td>
-            <td>{{domicilio.calle}}</td>
-            <td>{{domicilio.no_calle}}</td>
-  			<td>{{domicilio.pais}}</td>
-            <div class = 'select'>
-  			   <td>
-  				  <a class = 'button' href="editar_domicilio/{{domicilio.id}}">Editar</a>
-  			   </td>
-  			   <td>
-  				  <a class= 'button' href="eliminar_domicilio/{{domicilio.id}}">Eliminar</a>
-  			   </td>
-           </div>
-        </tr>
-		{% endfor %}
-      </tbody>
-    </table>
-  </div>
-  <div>
-	  <a class = 'list1' href="nuevo_domicilio">Agregar domicilio</a>
-  </div>
-  <div>
-      <a class="list2" href="http://127.0.0.1:8000/#menu">Volver atrás</a>
-  </div>
+    <h1>Listado de Domicilios</h1>
+    <div class='canti'> Cantidad de domicilios registrados: {{numero}}</div>
+    <div class="tbl-header">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Calle</th>
+                    <th>Numero</th>
+                    <th>País</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="tbl-content">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+                {% for domicilio in domicilios %}
+                <tr>
+                    <td>{{domicilio.id}}</td>
+                    <td>{{domicilio.calle}}</td>
+                    <td>{{domicilio.no_calle}}</td>
+                    <td>{{domicilio.pais}}</td>
+                    <div class='select'>
+                        <td>
+                            <a class='button' href="editar_domicilio/{{domicilio.id}}">Editar</a>
+                        </td>
+                        <td>
+                            <a class='button' href="eliminar_domicilio/{{domicilio.id}}">Eliminar</a>
+                        </td>
+                    </div>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <a class='list1' href="nuevo_domicilio">Agregar domicilio</a>
+    </div>
+    <div>
+        <a class="list2" href="http://127.0.0.1:8000/#menu">Volver atrás</a>
+    </div>
 </section>

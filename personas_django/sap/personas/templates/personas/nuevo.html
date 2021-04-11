@@ -3,22 +3,22 @@
 
 <link rel="stylesheet" href="{% static 'style-edit.css' %}">
 <div class="wrapper">
-  <form method="POST">
-    <div class="group">
-        <h1>Agregar Persona</h1>
-        <p>Para agregar un domicilio no existente en la lista del final, debe de dirigirse a la lista de domicilios en el menú principal y agregar uno nuevo</p>
-      <table>
-          {{formaPersona}}
-      </table>
-      {% csrf_token %}
-    <div class="btn-box">
-      <button class="btn btn-submit" type="submit">Enviar</button>
-      <button class="btn btn-cancel" onclick="goBack()">Volver</button>
-    </div>
-  </form>
+    <form method="POST">
+        <div class="group">
+            <h1>Agregar Persona</h1>
+            <p>Para agregar un domicilio no existente en la lista del final, debe de dirigirse a la lista de domicilios en el menú principal y agregar uno nuevo</p>
+            <table>
+                {{formaPersona}}
+            </table>
+            {% csrf_token %}
+            <div class="btn-box">
+                <button class="btn btn-submit" type="submit">Enviar</button>
+                <button class="btn btn-cancel" onclick="goBack()">Volver</button>
+            </div>
+    </form>
 </div>
 <script>
-function goBack() {
-  window.history.back();
-}
+    function goBack() {
+        window.history.back();
+    }
 </script>

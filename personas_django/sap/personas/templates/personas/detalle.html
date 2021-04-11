@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+
+<link rel="stylesheet" href="{% static 'detail-style.css' %}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<body>
+    <div class = 'list'>
+        <ul>
+            <li for="01">Id persona: {{persona.id}}</label>
+            <li for="02">Nombre y Apellido: {{persona.nombre}} {{persona.apellido}}</label>
+            <li for="03">Email {{persona.email}}</label>
+            <li for="04">Id domicilio: {{domicilio}}</label>
+        </ul>
+        <a href="javascript:history.back()"class="close">Atrás</a>
+    </div>
+</body>

@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<div class="container">
+<h1>
+    <a href="#menu"> SAP</a>
+</h1>
+<div class="popover" id="menu">
+<div class = 'content'>
+ <a href="#" class="close"></a>
+  <div class = 'nav'>
+   <ul class = 'nav_list'>
+     <h1>Menu Principal</h1>
+     <div class = 'nav_list_item'>
+     </div>
+     <div class = 'nav_list_item'>
+     <li><a href="{% url 'listperson' %}">Listado Persona</a></li>
+     </div>
+    <div class = 'nav_list_item'>
+       <li><a href="{% url 'listado' %}">Listado Domicilios</a></li>
+     </div>
+   <div class = 'nav_list_item'>
+     <li><a href="about">About</a></li>
+     </div>
+   </ul>
+ </div>
+</div>
+</div>
+</div>

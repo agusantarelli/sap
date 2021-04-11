@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+
+<link rel="stylesheet" href="{% static 'style-edit.css' %}">
+<div class="wrapper">
+  <form method="POST">
+    <div class="group">
+        <h1>Editar Persona</h1>
+        <p>Si desea cambiar el domicilio, verifique en lista final si se encuentra el mismo, de lo contrario deberá dirigirse a la lista de domicilios en el menú principal y agregarlo</p>
+      <table>
+          {{formaPersona}}
+      </table>
+      {% csrf_token %}
+    <div class="btn-box">
+      <button class="btn btn-submit" type="submit">Enviar</button>
+      <button class="btn btn-cancel" onclick="goBack()">Volver</button>
+    </div>
+  </form>
+</div>
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>

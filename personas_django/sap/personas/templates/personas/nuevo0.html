@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+
+<link rel="stylesheet" href="{% static 'style-edit.css' %}">
+<div class="wrapper">
+  <form method="POST">
+    <div class="group">
+        <h1>Editar Persona</h1>
+        <p>Para agregar un domicilio no existente en la lista del final, debe de dirigirse al catálogo de domicilios y agregar uno nuevo</p>
+      <table>
+          {{formaPersona}}
+      </table>
+      {% csrf_token %}
+    <div class="btn-box">
+      <button class="btn btn-submit" type="submit">Enviar</button>
+      <button class="btn btn-cancel" onclick="goBack()">Volver</button>
+    </div>
+  </form>
+</div>
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>

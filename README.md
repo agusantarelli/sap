@@ -8,10 +8,10 @@ Esta es un aplicación web estilo CRUD realidad con Django. Es muy básica y sen
 - $ source myenv/bin/activate
 - $ pip install Django
 - $ pip install psycopg2
-Si el comando anterior tira error, entonces ejecute el de abajo
+- Si el comando anterior tira error, entonces ejecute el de abajo
 - $ pip install psycopg2-binary
 - $ cd sap
-Una vez completado los pasos anteriores tienen que proceder a crear una base de datos en postgres. Una vez creada, deben proporcionar la indormación de la misma en sap/settings.py en el apartado DATABASES. Una vez completado los datos, procedemos en consola con lo siguiente:
+- Una vez completado los pasos anteriores tienen que proceder a crear una base de datos en postgres. Una vez creada, deben proporcionar la indormación de la misma en sap/settings.py en el apartado DATABASES. Una vez completado los datos, procedemos en consola con lo siguiente:
 - $ python manage.py migrate
 - $ python3 manage.py runserver
 
